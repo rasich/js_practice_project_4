@@ -11,7 +11,7 @@ $('.qwer').removeAttr('data-url');
 
 $('div').click(function() {
   // console.log($(this).index());
-})
+});
 
 // console.log($('button').html('hello'));
 
@@ -20,4 +20,6 @@ $('div').click(function() {
 // console.log($('.some').closest('.findmew'));
 // console.log($('.some').closest('.findme').addClass('aedw'));
 
-console.log($('.more').eq(0).siblings());
+// console.log($('.more').eq(0).siblings());
+
+$('button').fadeIn(1800);
