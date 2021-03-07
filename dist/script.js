@@ -556,21 +556,15 @@ _core__WEBPACK_IMPORTED_MODULE_0__["default"].prototype.click = function (handle
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _lib_lib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./lib/lib */ "./src/js/lib/lib.js");
 
-$('button').on('click', function () {
-  $(this).toggleClass('active');
-  $('div').eq(2).toggleClass('active');
+$('#first').on('click', () => {
+  $('div').eq(1).fadeOut(800);
 });
-$('.qwer').setAttr('test', 'rewq'); // console.log($('.qwer').getAttr('value'));
-
-$('.qwer').removeAttr('data-url');
-$('div').click(function () {// console.log($(this).index());
-}); // console.log($('button').html('hello'));
-// console.log($('div').eq(3).find('.some'));
-// console.log($('.some').closest('.findmew'));
-// console.log($('.some').closest('.findme').addClass('aedw'));
-// console.log($('.more').eq(0).siblings());
-
-$('button').fadeIn(1800);
+$('[data-count="second"]').on('click', () => {
+  $('div').eq(2).fadeOut(800);
+});
+$('button').eq(2).on('click', () => {
+  $('.w-500').fadeOut(800);
+});
 
 /***/ })
 
