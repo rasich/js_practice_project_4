@@ -2218,6 +2218,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_tab__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./components/tab */ "./src/js/lib/components/tab.js");
 /* harmony import */ var _components_accordion__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./components/accordion */ "./src/js/lib/components/accordion.js");
 /* harmony import */ var _components_carousel__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./components/carousel */ "./src/js/lib/components/carousel.js");
+/* harmony import */ var _services_requests__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./services/requests */ "./src/js/lib/services/requests.js");
+
 
 
 
@@ -2643,6 +2645,57 @@ _core__WEBPACK_IMPORTED_MODULE_0__["default"].prototype.click = function (handle
 
 /***/ }),
 
+/***/ "./src/js/lib/services/requests.js":
+/*!*****************************************!*\
+  !*** ./src/js/lib/services/requests.js ***!
+  \*****************************************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../core */ "./src/js/lib/core.js");
+
+
+_core__WEBPACK_IMPORTED_MODULE_0__["default"].prototype.get = async function (url, dataTypeAnswer = 'json') {
+  let res = await fetch(url);
+
+  if (!res.ok) {
+    throw new Error(`Could not fetch ${url}, status: ${res.status}`);
+  }
+
+  switch (dataTypeAnswer) {
+    case 'json':
+      return await res.json();
+
+    case 'text':
+      return await res.text();
+
+    case 'blob':
+      return await res.blob();
+  }
+};
+
+_core__WEBPACK_IMPORTED_MODULE_0__["default"].prototype.post = async function (url, data, dataTypeAnswer = 'text') {
+  let res = await fetch(url, {
+    method: "POST",
+    body: data
+  });
+
+  switch (dataTypeAnswer) {
+    case 'json':
+      return await res.json();
+
+    case 'text':
+      return await res.text();
+
+    case 'blob':
+      return await res.blob();
+  }
+};
+
+/***/ }),
+
 /***/ "./src/js/main.js":
 /*!************************!*\
   !*** ./src/js/main.js ***!
@@ -2679,6 +2732,7 @@ $('#trigger').click(() => $('#trigger').createModal({
     }]]
   }
 }));
+$().get('https://jsonplaceholder.typicode.com/todos/1').then(res => console.log(res));
 
 /***/ })
 
