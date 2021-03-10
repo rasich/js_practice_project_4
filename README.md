@@ -2,7 +2,7 @@
 
 Проект курса "Практический JavaScript (Продвинутый уровень)" от Ивана Петриченко.
 
-* **[main function and methods](/commit/3a6f40181541108d5c15cd2d67e7916fa20101ff)** - создана главная функция $, методы show/hide/toggle, init.
+* **[main function and methods](./commit/3a6f40181541108d5c15cd2d67e7916fa20101ff)** - создана главная функция $, методы show/hide/toggle, init.
 * **[methods for classes, attributes and events](commit/16569c9708f3cc3fb4806ded2520d5bfbd857b85)** - созданы методы по работе с классами, атрибутами и обработчиками событий.
 * **[actions](commit/001b23bab692b3e0a28ecd09442e878ac30014fa)** - созданы методы для работы с элементами на странице: html, eq, find, siblings…
 * **[animation](commit/708320cf600b6fc5ad4bae0f987313a3178d1401)** - созданы анимации.
